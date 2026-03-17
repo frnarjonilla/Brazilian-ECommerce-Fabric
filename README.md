@@ -38,6 +38,17 @@ El corazón del proyecto reside en el Warehouse, donde se definieron las relacio
 
 ![Warehouse Fabric](./images/Wharehouse.png)
 
+🤖 Automatización y Notificaciones (Power Automate)
+Para cerrar el ciclo de vida del dato, integré Power Automate con el ecosistema de Fabric para asegurar que la información llegue a los tomadores de decisiones sin intervención manual:
+
+Alertas de Actualización: Configuración de un flujo que se dispara al completarse la carga de datos, enviando una notificación automática por correo electrónico/Teams.
+
+Eficiencia Operativa: Reducción del tiempo de respuesta entre la disponibilidad del dato y la acción de negocio.
+
+![Flujo Power Automate](./images/1.png)
+![Flujo Power Automate](./images/2.png)
+![Flujo Power Automate](./images/3.png)
+
 📈 Insights de Negocio (Ejemplos)
 A través del análisis realizado, se identificaron puntos críticos para la operación:
 
