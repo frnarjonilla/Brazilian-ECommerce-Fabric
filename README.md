@@ -1,8 +1,10 @@
 End-to-End Data Engineering Portfolio: Brazilian E-Commerce (Olist) en Microsoft Fabric
+
 📝 Descripción del Proyecto
 Este proyecto implementa una solución de análisis de datos integral utilizando Microsoft Fabric. El objetivo es transformar datos brutos del ecosistema de e-commerce brasileño (Olist) en insights accionables, asegurando la calidad del dato y la estabilidad del sistema mediante pipelines robustos y automatización.
 
 🏗️ Arquitectura Técnica
+
 El proyecto sigue una arquitectura de Medallón (Bronze -> Silver -> Gold) integrada en un entorno SaaS:
 
 Ingestión: Carga de archivos planos al Data Warehouse de Fabric.
@@ -16,6 +18,7 @@ Visualización: Dashboard interactivo en Power BI con métricas clave de ventas 
 Automatización: Integración con Power Automate para alertas de errores en tiempo real y envío de reportes.
 
 🛠️ Tecnologías Utilizadas
+
 Microsoft Fabric: Warehouse, Notebooks, Pipelines.
 
 Lenguajes: SQL (T-SQL) y Python (PySpark).
@@ -25,12 +28,10 @@ Visualización: Power BI (Direct Lake / Import).
 Automatización: Power Automate (Webhooks HTTP).
 
 🚀 Características Destacadas
-1. Ingeniería de Datos con PySpark
-A diferencia de los procesos ETL tradicionales, utilicé Notebooks de Spark para manejar transformaciones complejas.
+
+1. Ingeniería de Datos con PySpark: A diferencia de los procesos ETL tradicionales, utilicé Notebooks de Spark para manejar transformaciones complejas.
 
 Logro: Implementación de cálculos de impuestos y filtros de integridad utilizando DataFrames de Spark.
-
-Código: (Aquí puedes pegar un fragmento del código que hicimos o poner el link al archivo .ipynb).
 
 2. Pipeline Robusto y Gestión de Errores
 Diseñé un flujo de trabajo que minimiza la intervención humana:
