@@ -36,6 +36,8 @@ Manejo de Esquemas: Resolución de conflictos de nombres de columnas y tipos de 
 🏛️ Modelado en el Warehouse
 El corazón del proyecto reside en el Warehouse, donde se definieron las relaciones entre pedidos, productos y vendedores, garantizando la integridad referencial y facilitando el análisis multidimensional.
 
+![Warehouse Fabric](./images/Wharehouse.png)
+
 📈 Insights de Negocio (Ejemplos)
 A través del análisis realizado, se identificaron puntos críticos para la operación:
 
