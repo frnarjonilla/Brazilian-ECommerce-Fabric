@@ -55,3 +55,14 @@ A través del análisis realizado, se identificaron puntos críticos para la ope
 Logística: Identificación de las regiones de Brasil con mayores costos de envío relativo al precio del producto.
 
 Ventas: Análisis de los periodos pico para optimizar la disponibilidad de los vendedores.
+
+📊 Visualización y Business Intelligence
+
+El resultado final es un tablero interactivo en **Power BI** que permite a los stakeholders monitorear la salud del negocio en tiempo real.
+
+> *[AQUÍ ARRASTRA LA IMAGEN DE TU DASHBOARD PRINCIPAL]*
+
+**Características destacadas del reporte:**
+* **Direct Lake Connection:** Conexión directa al Warehouse de Fabric para asegurar datos siempre actualizados sin necesidad de refrescos manuales.
+* **Análisis de Dispersión:** Identificación de la correlación entre el tiempo de entrega y la satisfacción del cliente.
+* **Filtros Dinámicos:** Segmentación por categoría de producto, estado y periodo temporal.
