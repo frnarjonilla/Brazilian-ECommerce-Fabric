@@ -1,43 +1,45 @@
-End-to-End Data Engineering Portfolio: Brazilian E-Commerce (Olist) en Microsoft Fabric
+📊 End-to-End Data Engineering: Brazilian E-Commerce (Olist)
+Implementación integral en Microsoft Fabric
+Este proyecto demuestra la construcción de una solución de datos moderna utilizando Microsoft Fabric, cubriendo desde la ingesta en un Data Warehouse hasta la transformación avanzada con PySpark y la visualización estratégica en Power BI.
 
-📝 Descripción del Proyecto
-Este proyecto implementa una solución de análisis de datos integral utilizando Microsoft Fabric. El objetivo es transformar datos brutos del ecosistema de e-commerce brasileño (Olist) en insights accionables, asegurando la calidad del dato y la estabilidad del sistema mediante pipelines robustos y automatización.
+🏗️ Arquitectura del Proyecto
+La solución se basa en una arquitectura de Medallón, aprovechando el ecosistema SaaS de Fabric:
 
-🏗️ Arquitectura Técnica
+Ingesta (Bronze): Carga de datos crudos del ecosistema Olist (Kaggle) directamente en el Warehouse.
 
-El proyecto sigue una arquitectura de Medallón (Bronze -> Silver -> Gold) integrada en un entorno SaaS:
+Transformación (Silver): Uso de Notebooks de Apache Spark para limpieza de datos, manejo de nulos y feature engineering.
 
-Ingestión: Carga de archivos planos al Data Warehouse de Fabric.
+Modelado (Gold): Estructuración de tablas finales en el Warehouse mediante SQL para consumo analítico.
 
-Procesamiento: Transformación de datos mediante Notebooks (PySpark) para limpieza avanzada y lógica de negocio.
-
-Orquestación: Data Factory Pipelines con lógica de "Self-healing" (autorreparación) y reintentos automáticos.
-
-Visualización: Dashboard interactivo en Power BI con métricas clave de ventas y logística.
-
-Automatización: Integración con Power Automate para alertas de errores en tiempo real y envío de reportes.
+Visualización: Reportes interactivos en Power BI conectados mediante Direct Lake para máximo rendimiento.
 
 🛠️ Tecnologías Utilizadas
+Plataforma: Microsoft Fabric (SaaS)
 
-Microsoft Fabric: Warehouse, Notebooks, Pipelines.
+Almacenamiento: Data Warehouse (T-SQL)
 
-Lenguajes: SQL (T-SQL) y Python (PySpark).
+Procesamiento: PySpark (Python 3.10)
 
-Visualización: Power BI (Direct Lake / Import).
+Visualización: Power BI
 
-Automatización: Power Automate (Webhooks HTTP).
+Automatización: Power Automate (Notificaciones y Alertas)
 
-🚀 Características Destacadas
+🚀 Puntos Clave del Desarrollo
+🐍 Ingeniería de Datos con PySpark
+Para las transformaciones más complejas, opté por Notebooks de Spark en lugar de SQL tradicional. Esto permite una mayor escalabilidad y flexibilidad.
 
-1. Ingeniería de Datos con PySpark: A diferencia de los procesos ETL tradicionales, utilicé Notebooks de Spark para manejar transformaciones complejas.
+Cálculo de Métricas: Implementación de lógica para consolidar precio_total (precio + flete) con redondeo de precisión.
 
-Logro: Implementación de cálculos de impuestos y filtros de integridad utilizando DataFrames de Spark.
+Manejo de Esquemas: Resolución de conflictos de nombres de columnas y tipos de datos mediante DataFrames.
 
-2. Pipeline Robusto y Gestión de Errores
-Diseñé un flujo de trabajo que minimiza la intervención humana:
+[AQUÍ DEBES INSERTAR TU "CAPTURA DE PANTALLA (48)"]
 
-Retry Logic: Configuración de reintentos automáticos ante fallos transitorios.
+🏛️ Modelado en el Warehouse
+El corazón del proyecto reside en el Warehouse, donde se definieron las relaciones entre pedidos, productos y vendedores, garantizando la integridad referencial y facilitando el análisis multidimensional.
 
-Error Handling: Ruta de fallo ("On Failure") que dispara scripts de limpieza SQL para evitar duplicidad de datos.
+📈 Insights de Negocio (Ejemplos)
+A través del análisis realizado, se identificaron puntos críticos para la operación:
 
-Notificaciones: Alerta automática a través de Power Automate ante errores críticos no recuperables.
+Logística: Identificación de las regiones de Brasil con mayores costos de envío relativo al precio del producto.
+
+Ventas: Análisis de los periodos pico para optimizar la disponibilidad de los vendedores.
