@@ -60,7 +60,7 @@ Ventas: Análisis de los periodos pico para optimizar la disponibilidad de los v
 
 El resultado final es un tablero interactivo en **Power BI** que permite a los stakeholders monitorear la salud del negocio en tiempo real.
 
-![Dashboard Principal](./images/d1.png)
+![Dashboard Principal](./images/d1.jpg)
 
 **Características destacadas del reporte:**
 * **Direct Lake Connection:** Conexión directa al Warehouse de Fabric para asegurar datos siempre actualizados sin necesidad de refrescos manuales.
