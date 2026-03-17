@@ -1,5 +1,5 @@
-📊 End-to-End Data Engineering: Brazilian E-Commerce (Olist)
-Implementación integral en Microsoft Fabric
+📊 End-to-End Data Engineering: Brazilian E-Commerce (Olist). Implementación integral en Microsoft Fabric
+
 Este proyecto demuestra la construcción de una solución de datos moderna utilizando Microsoft Fabric, cubriendo desde la ingesta en un Data Warehouse hasta la transformación avanzada con PySpark y la visualización estratégica en Power BI.
 
 🏗️ Arquitectura del Proyecto
@@ -25,8 +25,7 @@ Visualización: Power BI
 Automatización: Power Automate (Notificaciones y Alertas)
 
 🚀 Puntos Clave del Desarrollo
-🐍 Ingeniería de Datos con PySpark
-Para las transformaciones más complejas, opté por Notebooks de Spark en lugar de SQL tradicional. Esto permite una mayor escalabilidad y flexibilidad.
+🐍 Ingeniería de Datos con PySpark: Para las transformaciones más complejas, opté por Notebooks de Spark en lugar de SQL tradicional. Esto permite una mayor escalabilidad y flexibilidad.
 
 Cálculo de Métricas: Implementación de lógica para consolidar precio_total (precio + flete) con redondeo de precisión.
 
