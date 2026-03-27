@@ -1,61 +1,66 @@
-# 🛒 Brazilian E-Commerce Data Pipeline (Microsoft Fabric)
+# 📊 End-to-End Data Engineering: Brazilian E-Commerce (Olist)
+![Status: Finished](https://img.shields.io/badge/Status-Finished-green)
+![Platform: Microsoft Fabric](https://img.shields.io/badge/Platform-Microsoft%20Fabric-blue)
+![Tech: PySpark](https://img.shields.io/badge/Tech-PySpark-orange)
+![Tech: SQL](https://img.shields.io/badge/Tech-SQL-lightgrey)
 
-Este proyecto implementa una arquitectura de datos moderna de extremo a extremo utilizando el dataset público de **Olist (Kaggle)**. El objetivo es transformar datos crudos de E-Commerce en un modelo dimensional listo para analítica avanzada, utilizando **Microsoft Fabric** como plataforma central.
+## 📖 Descripción del Proyecto
+Este proyecto implementa una solución integral de análisis de datos para el ecosistema de **Olist** (el marketplace más grande de Brasil). Utilizando **Microsoft Fabric**, he construido un flujo que transforma datos crudos en insights estratégicos, optimizando la arquitectura para la escalabilidad y la toma de decisiones en tiempo real.
 
 ---
 
-## 🏗️ Arquitectura del Proyecto (Medallion Architecture)
+## 🏗️ Arquitectura de la Solución
+He aplicado una **Arquitectura de Medallón** simplificada dentro del ecosistema SaaS de Fabric:
 
-El pipeline sigue el patrón de diseño de **Arquitectura Medallón** para garantizar la limpieza, integridad y escalabilidad de los datos en el OneLake:
-
-1.  **Bronze (Raw Layer):** Ingesta de 9 datasets en formato CSV (clientes, pedidos, productos, pagos, etc.) sin transformaciones.
-2.  **Silver (Cleaned Layer):** Procesamiento con **PySpark (Notebooks)** para:
-    * Tipado de datos (Schema Enforcement).
-    * Limpieza de nulos y duplicados.
-    * Normalización de campos de fecha y moneda.
-    * Cálculo de métricas de logística (tiempo de entrega real vs. estimado).
-3.  **Gold (Curated Layer):** Creación de un **Esquema en Estrella (Star Schema)** con tablas de hechos y dimensiones optimizadas para consultas SQL y Power BI.
+1.  **Ingesta (Bronze):** Carga masiva de datasets de Olist en el **Data Warehouse**.
+2.  **Procesamiento (Silver):** Transformación avanzada, limpieza y feature engineering mediante **Notebooks de PySpark**.
+3.  **Modelado (Gold):** Estructuración de un **Esquema en Estrella** para consumo analítico optimizado.
+4.  **Entrega de Valor:** Reportes interactivos en **Power BI** mediante tecnología **Direct Lake**.
 
 ---
 
 ## 🛠️ Stack Tecnológico
-
-* **Plataforma:** Microsoft Fabric.
-* **Motor de Procesamiento:** Apache Spark (PySpark).
-* **Almacenamiento:** OneLake con formato **Delta Lake**.
-* **Orquestación:** Fabric Pipelines.
-* **Lenguajes:** Python (PySpark) y T-SQL.
-
----
-
-## 🚀 Key Technical Features
-
-* **Procesamiento Distribuido:** Uso de Spark para manejar relaciones complejas entre millones de registros de ventas y pagos.
-* **Delta Lake Table Management:** Implementación de tablas Delta para asegurar transacciones ACID y facilitar el "Time Travel" de los datos.
-* **Transformaciones de Ingeniería:** * Unión de múltiples fuentes para consolidar el perfil de ventas por vendedor y categoría.
-    * Cálculo de KPIs de rendimiento logístico y segmentación geográfica.
+* **Almacenamiento:** Microsoft Fabric Warehouse (T-SQL).
+* **Motor de Procesamiento:** Apache Spark (PySpark 3.4).
+* **Orquestación:** Data Factory Pipelines.
+* **Automatización:** Power Automate para alertas de KPIs y salud del flujo.
+* **Visualización:** Power BI Desktop & Service.
 
 ---
 
-## 📁 Estructura del Repositorio
+## 🚀 Puntos Clave del Desarrollo
 
-* `/Notebooks`: Contiene los scripts de PySpark para las capas Silver y Gold.
-* `/SQL_Queries`: Consultas para la validación de datos en el SQL Endpoint de Fabric.
-* `/Screenshots`: Capturas del flujo de trabajo en el Workspace.
+### 🐍 Ingeniería de Datos con PySpark
+Para las transformaciones complejas, utilicé Spark para asegurar la escalabilidad. Un reto clave fue la normalización de columnas y el cálculo de métricas financieras.
+* **Reto Técnico:** Resolución de inconsistencias en nombres de columnas (`freight_value`) y tipos de datos.
+* **Solución:** Implementación de un script de limpieza que automatiza el cálculo del `precio_total` (precio + flete) con redondeo de precisión.
+
+### 🏛️ Modelado Dimensional
+Diseñé un esquema de estrella en el Warehouse para reducir la latencia en los reportes:
+* **Tablas de Hechos:** Ventas y pedidos.
+* **Tablas de Dimensión:** Productos, Vendedores y Geografía.
+
+### 🤖 Automatización y Notificaciones
+Implementé un flujo de trabajo que cierra la brecha entre el dato y el usuario mediante **Power Automate**, asegurando notificaciones automáticas al finalizar el refresco de datos y alertas de errores en el Pipeline.
 
 ---
 
-## 📈 Insights Generados
-
-A través de este pipeline, el modelo final permite responder a:
-1.  ¿Cuál es el tiempo medio de entrega por estado en Brasil?
-2.  ¿Qué categorías de productos generan el mayor LTV (Lifetime Value)?
-3.  ¿Cómo afectan los métodos de pago (boleto vs tarjeta) al ciclo de vida del pedido?
+## 📂 Estructura del Repositorio
+* **[/notebooks](./notebooks):** Scripts de PySpark para limpieza y transformación.
+* **[/sql_scripts](./sql_scripts):** Vistas y consultas de modelado en el Warehouse.
+* **[/images](./images):** Capturas de pantalla con las evidencias del proyecto (Warehouse, Notebooks, Pipelines y Dashboards).
 
 ---
 
-## 👤 Autor
+## 🖼️ Evidencias Técnicas (Capturas)
+Para consultar la implementación visual del proyecto, puede acceder a las capturas en la carpeta de recursos:
+* [Ejecución de Notebook PySpark](./images/captura48.png)
+* [Vista del Data Warehouse](./images/captura_warehouse.png)
+* [Dashboard Final Power BI](./images/captura_dashboard.png)
 
-**Francisco Javier Arjonilla Tello**
-* **LinkedIn:** [linkedin.com/in/francisco-arjonilla](https://www.linkedin.com/in/francisco-arjonilla)
-* **Email:** frnarjonilla@gmail.com
+---
+
+## 👤 Contacto
+**Francisco Narjonilla**
+* [LinkedIn](TU_LINK_AQUÍ)
+* [Email](TU_EMAIL_AQUÍ)
