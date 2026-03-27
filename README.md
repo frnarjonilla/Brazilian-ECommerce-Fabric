@@ -62,5 +62,5 @@ Para consultar la implementación visual del proyecto, puede acceder a las captu
 
 ## 👤 Contacto
 **Francisco Narjonilla**
-* [LinkedIn](www.linkedin.com/in/francisco-arjonilla)
+* [LinkedIn]www.linkedin.com/in/francisco-arjonilla
 * [Email](frnarjonilla@gmail.com)
