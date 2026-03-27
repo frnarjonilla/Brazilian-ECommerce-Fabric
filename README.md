@@ -1,68 +1,61 @@
-📊 End-to-End Data Engineering: Brazilian E-Commerce (Olist). Implementación integral en Microsoft Fabric
+# 🛒 Brazilian E-Commerce Data Pipeline (Microsoft Fabric)
 
-Este proyecto demuestra la construcción de una solución de datos moderna utilizando Microsoft Fabric, cubriendo desde la ingesta en un Data Warehouse hasta la transformación avanzada con PySpark y la visualización estratégica en Power BI.
+Este proyecto implementa una arquitectura de datos moderna de extremo a extremo utilizando el dataset público de **Olist (Kaggle)**. El objetivo es transformar datos crudos de E-Commerce en un modelo dimensional listo para analítica avanzada, utilizando **Microsoft Fabric** como plataforma central.
 
-🏗️ Arquitectura del Proyecto
-La solución se basa en una arquitectura de Medallón, aprovechando el ecosistema SaaS de Fabric:
+---
 
-Ingesta (Bronze): Carga de datos crudos del ecosistema Olist (Kaggle) directamente en el Warehouse.
+## 🏗️ Arquitectura del Proyecto (Medallion Architecture)
 
-Transformación (Silver): Uso de Notebooks de Apache Spark para limpieza de datos, manejo de nulos y feature engineering.
+El pipeline sigue el patrón de diseño de **Arquitectura Medallón** para garantizar la limpieza, integridad y escalabilidad de los datos en el OneLake:
 
-Modelado (Gold): Estructuración de tablas finales en el Warehouse mediante SQL para consumo analítico.
+1.  **Bronze (Raw Layer):** Ingesta de 9 datasets en formato CSV (clientes, pedidos, productos, pagos, etc.) sin transformaciones.
+2.  **Silver (Cleaned Layer):** Procesamiento con **PySpark (Notebooks)** para:
+    * Tipado de datos (Schema Enforcement).
+    * Limpieza de nulos y duplicados.
+    * Normalización de campos de fecha y moneda.
+    * Cálculo de métricas de logística (tiempo de entrega real vs. estimado).
+3.  **Gold (Curated Layer):** Creación de un **Esquema en Estrella (Star Schema)** con tablas de hechos y dimensiones optimizadas para consultas SQL y Power BI.
 
-Visualización: Reportes interactivos en Power BI conectados mediante Direct Lake para máximo rendimiento.
+---
 
-🛠️ Tecnologías Utilizadas
-Plataforma: Microsoft Fabric (SaaS)
+## 🛠️ Stack Tecnológico
 
-Almacenamiento: Data Warehouse (T-SQL)
+* **Plataforma:** Microsoft Fabric.
+* **Motor de Procesamiento:** Apache Spark (PySpark).
+* **Almacenamiento:** OneLake con formato **Delta Lake**.
+* **Orquestación:** Fabric Pipelines.
+* **Lenguajes:** Python (PySpark) y T-SQL.
 
-Procesamiento: PySpark (Python 3.10)
+---
 
-Visualización: Power BI
+## 🚀 Key Technical Features
 
-Automatización: Power Automate (Notificaciones y Alertas)
+* **Procesamiento Distribuido:** Uso de Spark para manejar relaciones complejas entre millones de registros de ventas y pagos.
+* **Delta Lake Table Management:** Implementación de tablas Delta para asegurar transacciones ACID y facilitar el "Time Travel" de los datos.
+* **Transformaciones de Ingeniería:** * Unión de múltiples fuentes para consolidar el perfil de ventas por vendedor y categoría.
+    * Cálculo de KPIs de rendimiento logístico y segmentación geográfica.
 
-🚀 Puntos Clave del Desarrollo
-🐍 Ingeniería de Datos con PySpark: Para las transformaciones más complejas, opté por Notebooks de Spark en lugar de SQL tradicional. Esto permite una mayor escalabilidad y flexibilidad.
+---
 
-Cálculo de Métricas: Implementación de lógica para consolidar precio_total (precio + flete) con redondeo de precisión.
+## 📁 Estructura del Repositorio
 
-Manejo de Esquemas: Resolución de conflictos de nombres de columnas y tipos de datos mediante DataFrames.
+* `/Notebooks`: Contiene los scripts de PySpark para las capas Silver y Gold.
+* `/SQL_Queries`: Consultas para la validación de datos en el SQL Endpoint de Fabric.
+* `/Screenshots`: Capturas del flujo de trabajo en el Workspace.
 
-![Notebook PySpark](./images/Notebook.png)
+---
 
-🏛️ Modelado en el Warehouse
-El corazón del proyecto reside en el Warehouse, donde se definieron las relaciones entre pedidos, productos y vendedores, garantizando la integridad referencial y facilitando el análisis multidimensional.
+## 📈 Insights Generados
 
-![Warehouse Fabric](./images/Wharehouse.png)
+A través de este pipeline, el modelo final permite responder a:
+1.  ¿Cuál es el tiempo medio de entrega por estado en Brasil?
+2.  ¿Qué categorías de productos generan el mayor LTV (Lifetime Value)?
+3.  ¿Cómo afectan los métodos de pago (boleto vs tarjeta) al ciclo de vida del pedido?
 
-🤖 Automatización y Notificaciones (Power Automate)
-Para cerrar el ciclo de vida del dato, integré Power Automate con el ecosistema de Fabric para asegurar que la información llegue a los tomadores de decisiones sin intervención manual:
+---
 
-Alertas de Actualización: Configuración de un flujo que se dispara al completarse la carga de datos, enviando una notificación automática por correo electrónico/Teams.
+## 👤 Autor
 
-Eficiencia Operativa: Reducción del tiempo de respuesta entre la disponibilidad del dato y la acción de negocio.
-
-![Flujo Power Automate](./images/1.png)
-![Flujo Power Automate](./images/2.png)
-![Flujo Power Automate](./images/3.png)
-
-📈 Insights de Negocio (Ejemplos)
-A través del análisis realizado, se identificaron puntos críticos para la operación:
-
-Logística: Identificación de las regiones de Brasil con mayores costos de envío relativo al precio del producto.
-
-Ventas: Análisis de los periodos pico para optimizar la disponibilidad de los vendedores.
-
-📊 Visualización y Business Intelligence
-
-El resultado final es un tablero interactivo en **Power BI** que permite a los stakeholders monitorear la salud del negocio en tiempo real.
-
-![Dashboard Principal](./images/d1.jpg)
-
-**Características destacadas del reporte:**
-* **Direct Lake Connection:** Conexión directa al Warehouse de Fabric para asegurar datos siempre actualizados sin necesidad de refrescos manuales.
-* **Análisis de Dispersión:** Identificación de la correlación entre el tiempo de entrega y la satisfacción del cliente.
-* **Filtros Dinámicos:** Segmentación por categoría de producto, estado y periodo temporal.
+**Francisco Javier Arjonilla Tello**
+* **LinkedIn:** [linkedin.com/in/francisco-arjonilla](https://www.linkedin.com/in/francisco-arjonilla)
+* **Email:** frnarjonilla@gmail.com
