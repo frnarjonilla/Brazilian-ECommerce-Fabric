@@ -54,9 +54,9 @@ Implementé un flujo de trabajo que cierra la brecha entre el dato y el usuario 
 
 ## 🖼️ Evidencias Técnicas (Capturas)
 Para consultar la implementación visual del proyecto, puede acceder a las capturas en la carpeta de recursos:
-* [Ejecución de Notebook PySpark](./images/captura48.png)
-* [Vista del Data Warehouse](./images/captura_warehouse.png)
-* [Dashboard Final Power BI](./images/captura_dashboard.png)
+* [Ejecución de Notebook PySpark](./images/Notebook.png)
+* [Vista del Data Warehouse](./images/Warehouse.png)
+* [Dashboard Final Power BI](./images/d1.png)
 
 ---
 
