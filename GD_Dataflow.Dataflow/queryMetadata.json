@@ -1,0 +1,128 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "GD_Dataflow",
+  "queryGroups": [
+    {
+      "id": "fced1f9d-9c2a-4ed0-86f7-8ae40373459b",
+      "name": "ocultas",
+      "description": ""
+    }
+  ],
+  "documentLocale": "es-ES",
+  "queriesMetadata": {
+    "SL_clientes": {
+      "queryId": "2bd1002c-4c45-4152-a180-9ebeeda7c851",
+      "queryName": "SL_clientes"
+    },
+    "SL_geolocalizacion": {
+      "queryId": "dc9ecd53-c6ca-44e4-abc1-5484a197ece2",
+      "queryName": "SL_geolocalizacion",
+      "queryGroupId": "fced1f9d-9c2a-4ed0-86f7-8ae40373459b",
+      "loadEnabled": false
+    },
+    "SL_ped": {
+      "queryId": "56173b40-26a6-45f5-a3f8-02a26a73dd52",
+      "queryName": "SL_ped",
+      "queryGroupId": "fced1f9d-9c2a-4ed0-86f7-8ae40373459b",
+      "loadEnabled": false
+    },
+    "SL_pedidos_items": {
+      "queryId": "84af6965-00a4-4553-8ddd-720cd106a794",
+      "queryName": "SL_pedidos_items",
+      "queryGroupId": "fced1f9d-9c2a-4ed0-86f7-8ae40373459b",
+      "loadEnabled": false
+    },
+    "SL_productos": {
+      "queryId": "834f2d2e-28f2-40ef-a2e8-6f9add04d918",
+      "queryName": "SL_productos",
+      "queryGroupId": "fced1f9d-9c2a-4ed0-86f7-8ae40373459b",
+      "loadEnabled": false
+    },
+    "SL_traduccion_categoria": {
+      "queryId": "26f0ff1d-10ee-4c5b-8f62-2cb288529e1d",
+      "queryName": "SL_traduccion_categoria",
+      "queryGroupId": "fced1f9d-9c2a-4ed0-86f7-8ae40373459b",
+      "loadEnabled": false
+    },
+    "SL_vendedores": {
+      "queryId": "c7799d37-edfa-4771-aa63-c8521cc81046",
+      "queryName": "SL_vendedores",
+      "queryGroupId": "fced1f9d-9c2a-4ed0-86f7-8ae40373459b",
+      "loadEnabled": false
+    },
+    "SL_ordenes_pago": {
+      "queryId": "b9c1bbac-216f-4376-83c9-a11bf59ad531",
+      "queryName": "SL_ordenes_pago"
+    },
+    "SL_reseñas": {
+      "queryId": "3aa84d7c-3098-4b86-96e6-5787a9c40b8f",
+      "queryName": "SL_reseñas"
+    },
+    "GD_pedidos": {
+      "queryId": "22adb808-1589-47ac-ae0b-642bb5428789",
+      "queryName": "GD_pedidos"
+    },
+    "GD_vendedores": {
+      "queryId": "b645a58e-7e19-466f-befd-c1da61d3c0ec",
+      "queryName": "GD_vendedores"
+    },
+    "GD_prod_cat": {
+      "queryId": "750c6cac-b16f-4300-9c74-01619346d855",
+      "queryName": "GD_prod_cat"
+    },
+    "SL_clientes_DataDestination": {
+      "queryId": "a1eb052a-8a32-49f1-9ac3-1baffb9e1974",
+      "queryName": "SL_clientes_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "SL_reseñas_DataDestination": {
+      "queryId": "3b66faf9-71d7-4afd-9ad8-cfd41269f76c",
+      "queryName": "SL_reseñas_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "GD_vendedores_DataDestination": {
+      "queryId": "21cd3dc0-663d-4cce-82d7-b95f95ac236e",
+      "queryName": "GD_vendedores_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "GD_prod_cat_DataDestination": {
+      "queryId": "0df87a54-3a89-4f1b-81a4-3c14d0026d06",
+      "queryName": "GD_prod_cat_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "GD_dim_calendario": {
+      "queryId": "d288089d-1784-484a-b98d-a87fbc056ff0",
+      "queryName": "GD_dim_calendario"
+    },
+    "GD_dim_calendario_DataDestination": {
+      "queryId": "71c7d06b-123f-4240-8b3c-2f98be01aa0f",
+      "queryName": "GD_dim_calendario_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "SL_ordenes_pago_DataDestination": {
+      "queryId": "b830b21a-5d9b-4975-8630-41dd1330f9c6",
+      "queryName": "SL_ordenes_pago_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "GD_pedidos_DataDestination": {
+      "queryId": "5c9e8b9e-e486-456c-bee4-2a79ded2304a",
+      "queryName": "GD_pedidos_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Warehouse",
+      "kind": "Warehouse",
+      "connectionId": "{\"ClusterId\":\"718da411-2991-4af6-9124-ecb48c4fcc9d\",\"DatasourceId\":\"5db04c25-c390-464c-bcf4-c2dd18e0209e\"}"
+    }
+  ]
+}

@@ -1,0 +1,160 @@
+table GD_fact_pedidos
+	lineageTag: 2fcf3f2b-db6f-47d3-b9c5-621ea891e57d
+	sourceLineageTag: [dbo].[GD_fact_pedidos]
+
+	column id_pedido
+		dataType: string
+		lineageTag: 94360350-7c8b-4e04-9420-7be94650146a
+		sourceLineageTag: id_pedido
+		summarizeBy: none
+		sourceColumn: id_pedido
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_sesion_cliente
+		dataType: string
+		lineageTag: 956c91b1-1448-4d0d-a186-c8f7e82b5d7d
+		sourceLineageTag: id_sesion_cliente
+		summarizeBy: none
+		sourceColumn: id_sesion_cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column estado_pedido
+		dataType: string
+		lineageTag: d04647c4-8550-4957-8330-f3551c06d192
+		sourceLineageTag: estado_pedido
+		summarizeBy: none
+		sourceColumn: estado_pedido
+
+		annotation SummarizationSetBy = Automatic
+
+	column fecha_compra
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b90d2dfb-a5f0-4e1f-aa5b-4d3c437896fd
+		sourceLineageTag: fecha_compra
+		summarizeBy: none
+		sourceColumn: fecha_compra
+
+		annotation SummarizationSetBy = Automatic
+
+	column fecha_aprobacion_pedido
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: df49d2cf-d6dd-4602-8f54-e2fb15e96fa5
+		sourceLineageTag: fecha_aprobacion_pedido
+		summarizeBy: none
+		sourceColumn: fecha_aprobacion_pedido
+
+		annotation SummarizationSetBy = Automatic
+
+	column fecha_limite_envio
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a8f6c180-e00c-434f-b3df-fd05a2c5e1e2
+		sourceLineageTag: fecha_limite_envio
+		summarizeBy: none
+		sourceColumn: fecha_limite_envio
+
+		annotation SummarizationSetBy = Automatic
+
+	column fecha_recepcion_transportista
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: aacfc01c-c5df-413c-a384-424e55aa697f
+		sourceLineageTag: fecha_recepcion_transportista
+		summarizeBy: none
+		sourceColumn: fecha_recepcion_transportista
+
+		annotation SummarizationSetBy = Automatic
+
+	column fecha_entrega_estimada
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 7d5d2bff-e0eb-41b4-a807-d00eb2c1d37e
+		sourceLineageTag: fecha_entrega_estimada
+		summarizeBy: none
+		sourceColumn: fecha_entrega_estimada
+
+		annotation SummarizationSetBy = Automatic
+
+	column fecha_entrega_real
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b1b04734-37a2-4ca9-b8d2-b0449969c16f
+		sourceLineageTag: fecha_entrega_real
+		summarizeBy: none
+		sourceColumn: fecha_entrega_real
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_vendedor
+		dataType: string
+		lineageTag: 63e7f230-52b0-457a-acca-323675400884
+		sourceLineageTag: id_vendedor
+		summarizeBy: none
+		sourceColumn: id_vendedor
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_producto
+		dataType: string
+		lineageTag: d624648d-6d66-4be8-a3e7-505d0010a2f9
+		sourceLineageTag: id_producto
+		summarizeBy: none
+		sourceColumn: id_producto
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_articulo
+		dataType: string
+		lineageTag: ae7e77a2-0af8-4e79-9d20-42965a735846
+		sourceLineageTag: id_articulo
+		summarizeBy: none
+		sourceColumn: id_articulo
+
+		annotation SummarizationSetBy = Automatic
+
+	column precio
+		dataType: double
+		formatString: 0
+		lineageTag: df2ab79d-9f85-43c7-9d84-e4cedd844b57
+		sourceLineageTag: precio
+		summarizeBy: sum
+		sourceColumn: precio
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column precio_envio
+		dataType: double
+		formatString: 0
+		lineageTag: 6659a990-6cb6-4c93-80b8-f35c429c590e
+		sourceLineageTag: precio_envio
+		summarizeBy: sum
+		sourceColumn: precio_envio
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column precio_total
+		dataType: double
+		lineageTag: 49ad3025-2567-4e4b-a6be-890286b984ff
+		sourceLineageTag: precio_total
+		summarizeBy: sum
+		sourceColumn: precio_total
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition GD_fact_pedidos = entity
+		mode: directLake
+		source
+			entityName: GD_fact_pedidos
+			schemaName: dbo
+			expressionSource: 'DirectLake - OlistBrazilian'
+

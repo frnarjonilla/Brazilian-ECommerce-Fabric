@@ -1,0 +1,236 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "RefreshDataflow",
+        "typeProperties": {
+          "dataflowId": "82e702b8-e35b-839a-40b7-ff2a588c8f46",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "notifyOption": "NoNotification",
+          "dataflowType": "DataflowFabric"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Bronze_Dataflow",
+        "dependsOn": []
+      },
+      {
+        "type": "RefreshDataflow",
+        "typeProperties": {
+          "dataflowId": "d67716c2-2844-91e1-44eb-dc6ec0ee49a4",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "notifyOption": "NoNotification",
+          "dataflowType": "DataflowFabric"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Sliver_Dataflow",
+        "dependsOn": [
+          {
+            "activity": "Bronze_Dataflow",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "RefreshDataflow",
+        "typeProperties": {
+          "dataflowId": "367c54d4-a9e3-853e-4ce0-763070d3154f",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "notifyOption": "NoNotification",
+          "dataflowType": "DataflowFabric"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Gold_Dataflow",
+        "dependsOn": [
+          {
+            "activity": "Sliver_Dataflow",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Office365Email",
+        "typeProperties": {
+          "body": "<p>error al ejecutar el datafow bronce</p>",
+          "to": "frnarjonilla@gmail.com",
+          "subject": "Error 1"
+        },
+        "externalReferences": {
+          "connection": "86f41403-3a49-488d-9ab1-dc48516acef4"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Bronze_Error",
+        "dependsOn": [
+          {
+            "activity": "Bronze_Dataflow",
+            "dependencyConditions": [
+              "Failed"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Office365Email",
+        "typeProperties": {
+          "body": "<p>Error al ejecutar el dataflow bronce</p>",
+          "to": "frnarjonilla@gmail.com",
+          "subject": "Error 2"
+        },
+        "externalReferences": {
+          "connection": "86f41403-3a49-488d-9ab1-dc48516acef4"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Silver_Error",
+        "dependsOn": [
+          {
+            "activity": "Sliver_Dataflow",
+            "dependencyConditions": [
+              "Failed"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Office365Email",
+        "typeProperties": {
+          "body": "<p>Error al actualizar el dataflow oro</p>",
+          "to": "frnarjonilla@gmail.com",
+          "subject": "Error 3"
+        },
+        "externalReferences": {
+          "connection": "86f41403-3a49-488d-9ab1-dc48516acef4"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Gold_Error",
+        "dependsOn": [
+          {
+            "activity": "Gold_Dataflow",
+            "dependencyConditions": [
+              "Failed"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Office365Email",
+        "typeProperties": {
+          "body": "<p>Todo ha ido bien</p>",
+          "to": "frnarjonilla@gmail.com",
+          "subject": "Éxito pipeline fabric",
+          "importance": "High"
+        },
+        "externalReferences": {
+          "connection": "86f41403-3a49-488d-9ab1-dc48516acef4"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Todo_Ok",
+        "dependsOn": [
+          {
+            "activity": "Gold_Dataflow",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "PBISemanticModelRefresh",
+        "typeProperties": {
+          "method": "post",
+          "groupId": "cd02c6fc-d6de-41a3-bd04-20eefc533ee0",
+          "datasetId": "630558ff-92f1-4425-98ac-a260ffbe5c53",
+          "commitMode": "Transactional",
+          "objects": [
+            {
+              "table": "GD_dim_calendario"
+            },
+            {
+              "table": "GD_fact_pedidos"
+            },
+            {
+              "table": "GD_reseñas"
+            },
+            {
+              "table": "GD_dim_ordenes_pago"
+            },
+            {
+              "table": "GD_clientes"
+            },
+            {
+              "table": "GD_dim_prod_cat"
+            },
+            {
+              "table": "GD_dim_vendedores"
+            }
+          ],
+          "waitOnCompletion": true,
+          "operationType": "SemanticModelRefresh"
+        },
+        "externalReferences": {
+          "connection": "ac9e3cc4-c318-4fe1-a355-bae7265bc438"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Semantic model refresh1",
+        "dependsOn": [
+          {
+            "activity": "Gold_Dataflow",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+relationship 59cc8897-42c9-0ab1-4f6a-97519a1b7dc9
+	fromColumn: GD_fact_pedidos.fecha_compra
+	toColumn: GD_dim_calendario.Fecha
+
+relationship 1e2aae6e-f3e1-a4e2-97ed-267c2982c1ab
+	fromColumn: GD_fact_pedidos.id_vendedor
+	toColumn: GD_dim_vendedores.id_vendedor
+
+relationship 177c8b92-0465-2685-8c28-c3bebd641eab
+	fromColumn: GD_fact_pedidos.id_pedido
+	toColumn: GD_dim_ordenes_pago.order_id
+
+relationship 016d99fa-68e0-5bb3-b877-0235274b2ddf
+	fromColumn: GD_fact_pedidos.id_sesion_cliente
+	toColumn: GD_clientes.id_sesion_cliente
+
+relationship 87dd6c24-a8d1-578b-564e-86f592e31b89
+	fromColumn: GD_fact_pedidos.id_producto
+	toColumn: GD_dim_prod_cat.id_producto
+
+relationship f4a5e064-04e8-0ea2-4d52-0b7a804fc398
+	fromColumn: GD_fact_pedidos.id_pedido
+	toColumn: GD_reseñas.id_pedido
+

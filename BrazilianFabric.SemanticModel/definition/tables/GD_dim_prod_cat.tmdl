@@ -1,0 +1,89 @@
+table GD_dim_prod_cat
+	lineageTag: 41304064-fe9a-41db-885c-dc694b1dff41
+	sourceLineageTag: [dbo].[GD_dim_prod_cat]
+
+	column id_producto
+		dataType: string
+		lineageTag: a2f83aff-0d5e-4c7e-95c2-108ea8a59aa4
+		sourceLineageTag: id_producto
+		summarizeBy: none
+		sourceColumn: id_producto
+
+		annotation SummarizationSetBy = Automatic
+
+	column nombre_categoría
+		dataType: string
+		lineageTag: a89c6088-f5a2-469c-82c8-f6a49934cbb0
+		sourceLineageTag: nombre_categoría
+		summarizeBy: none
+		sourceColumn: nombre_categoría
+
+		annotation SummarizationSetBy = Automatic
+
+	column longitud_descripcion
+		dataType: int64
+		formatString: 0
+		lineageTag: 357103f5-f800-4db3-9876-f9ca931ebbc7
+		sourceLineageTag: longitud_descripcion
+		summarizeBy: none
+		sourceColumn: longitud_descripcion
+
+		annotation SummarizationSetBy = Automatic
+
+	column numero_fotos
+		dataType: int64
+		formatString: 0
+		lineageTag: 010dc5d1-e1c3-48a7-845a-0a2093a34d1e
+		sourceLineageTag: numero_fotos
+		summarizeBy: none
+		sourceColumn: numero_fotos
+
+		annotation SummarizationSetBy = Automatic
+
+	column peso_producto_gr
+		dataType: int64
+		formatString: 0
+		lineageTag: 81a9c275-2ce8-4061-843f-4f3bf6eee738
+		sourceLineageTag: peso_producto_gr
+		summarizeBy: none
+		sourceColumn: peso_producto_gr
+
+		annotation SummarizationSetBy = Automatic
+
+	column longitud_producto_cm
+		dataType: int64
+		formatString: 0
+		lineageTag: 23b11e38-fc45-45c1-b8fd-86c5807379c9
+		sourceLineageTag: longitud_producto_cm
+		summarizeBy: none
+		sourceColumn: longitud_producto_cm
+
+		annotation SummarizationSetBy = Automatic
+
+	column altura_producto_cm
+		dataType: int64
+		formatString: 0
+		lineageTag: c9a3ff22-3f19-4517-b513-4e38c52039cb
+		sourceLineageTag: altura_producto_cm
+		summarizeBy: none
+		sourceColumn: altura_producto_cm
+
+		annotation SummarizationSetBy = Automatic
+
+	column ancho_producto_cm
+		dataType: int64
+		formatString: 0
+		lineageTag: f7fc05b0-67c3-4a51-bc66-9518b76f40fe
+		sourceLineageTag: ancho_producto_cm
+		summarizeBy: none
+		sourceColumn: ancho_producto_cm
+
+		annotation SummarizationSetBy = Automatic
+
+	partition GD_dim_prod_cat = entity
+		mode: directLake
+		source
+			entityName: GD_dim_prod_cat
+			schemaName: dbo
+			expressionSource: 'DirectLake - OlistBrazilian'
+

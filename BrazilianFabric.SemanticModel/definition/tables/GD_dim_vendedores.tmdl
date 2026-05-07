@@ -1,0 +1,68 @@
+table GD_dim_vendedores
+	lineageTag: 739e146c-c3ae-4ab2-9ca2-e39b34a4e17e
+	sourceLineageTag: [dbo].[GD_dim_vendedores]
+
+	column id_vendedor
+		dataType: string
+		lineageTag: 7334b208-513a-4e97-8508-9add7aba3267
+		sourceLineageTag: id_vendedor
+		summarizeBy: none
+		sourceColumn: id_vendedor
+
+		annotation SummarizationSetBy = Automatic
+
+	column cp_vendedor
+		dataType: int64
+		formatString: 0
+		lineageTag: 6c92827d-01e3-4d87-b140-98a8127549ea
+		sourceLineageTag: cp_vendedor
+		summarizeBy: none
+		sourceColumn: cp_vendedor
+
+		annotation SummarizationSetBy = Automatic
+
+	column ciudad_vendedor
+		dataType: string
+		lineageTag: 1eee625d-5f3a-41d4-a1e7-18ecef19a930
+		sourceLineageTag: ciudad_vendedor
+		summarizeBy: none
+		sourceColumn: ciudad_vendedor
+
+		annotation SummarizationSetBy = Automatic
+
+	column estado_vendedor
+		dataType: string
+		lineageTag: 144584e5-f168-47c2-8ba7-c71215552e49
+		sourceLineageTag: estado_vendedor
+		summarizeBy: none
+		sourceColumn: estado_vendedor
+
+		annotation SummarizationSetBy = Automatic
+
+	column latitud
+		dataType: int64
+		formatString: 0
+		lineageTag: de9ae543-abfb-49b7-b02d-9fd473e9eb31
+		sourceLineageTag: latitud
+		summarizeBy: none
+		sourceColumn: latitud
+
+		annotation SummarizationSetBy = Automatic
+
+	column longitud
+		dataType: int64
+		formatString: 0
+		lineageTag: 40473c2d-99c7-44fe-89dc-2eb642dc6237
+		sourceLineageTag: longitud
+		summarizeBy: none
+		sourceColumn: longitud
+
+		annotation SummarizationSetBy = Automatic
+
+	partition GD_dim_vendedores = entity
+		mode: directLake
+		source
+			entityName: GD_dim_vendedores
+			schemaName: dbo
+			expressionSource: 'DirectLake - OlistBrazilian'
+

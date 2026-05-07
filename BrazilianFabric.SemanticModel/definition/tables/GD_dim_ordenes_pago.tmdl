@@ -1,0 +1,57 @@
+table GD_dim_ordenes_pago
+	lineageTag: 354ced3c-5fa9-4ea8-b71d-a4a1f0f44102
+	sourceLineageTag: [dbo].[GD_dim_ordenes_pago]
+
+	column order_id
+		dataType: string
+		lineageTag: 73830576-239d-427e-a4cd-014e0666da4a
+		sourceLineageTag: order_id
+		summarizeBy: none
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column payment_sequential
+		dataType: string
+		lineageTag: c58ad0f7-5cb2-4c99-87b9-56ce598260bd
+		sourceLineageTag: payment_sequential
+		summarizeBy: none
+		sourceColumn: payment_sequential
+
+		annotation SummarizationSetBy = Automatic
+
+	column payment_type
+		dataType: string
+		lineageTag: 935703d5-7e11-44df-b602-20c1d9470012
+		sourceLineageTag: payment_type
+		summarizeBy: none
+		sourceColumn: payment_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column payment_installments
+		dataType: string
+		lineageTag: f67b1fbe-35f1-4dfe-bce0-948de3dc9145
+		sourceLineageTag: payment_installments
+		summarizeBy: none
+		sourceColumn: payment_installments
+
+		annotation SummarizationSetBy = Automatic
+
+	column payment_value
+		dataType: double
+		formatString: 0
+		lineageTag: 98e828ef-7f13-450a-b268-3d7cd9323c1e
+		sourceLineageTag: payment_value
+		summarizeBy: none
+		sourceColumn: payment_value
+
+		annotation SummarizationSetBy = Automatic
+
+	partition GD_dim_ordenes_pago = entity
+		mode: directLake
+		source
+			entityName: GD_dim_ordenes_pago
+			schemaName: dbo
+			expressionSource: 'DirectLake - OlistBrazilian'
+

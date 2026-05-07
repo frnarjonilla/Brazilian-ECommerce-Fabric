@@ -1,0 +1,22 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: es-ES
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["DirectLake - OlistBrazilian"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["RemoteModeling","DirectLakeOnOneLakeCreatedInDesktop","DirectLakeOnOneLakeInWeb","WebModelingEdit"]
+
+ref table GD_dim_calendario
+ref table GD_fact_pedidos
+ref table GD_reseñas
+ref table GD_dim_ordenes_pago
+ref table GD_clientes
+ref table GD_dim_prod_cat
+ref table GD_dim_vendedores
+

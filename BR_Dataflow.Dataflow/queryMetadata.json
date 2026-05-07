@@ -1,0 +1,162 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "BR_Dataflow",
+  "queryGroups": [],
+  "documentLocale": "es-ES",
+  "queriesMetadata": {
+    "olist_orders_dataset": {
+      "queryId": "ef1846b1-e270-4174-81cb-4f35c97598e8",
+      "queryName": "olist_orders_dataset"
+    },
+    "Mes_a_cargar": {
+      "queryId": "c051415a-be4c-463b-8ec2-6fcfb7760299",
+      "queryName": "Mes_a_cargar",
+      "loadEnabled": false
+    },
+    "olist_order_items_dataset": {
+      "queryId": "5bc1f48c-7522-4568-9a19-a3aae371380f",
+      "queryName": "olist_order_items_dataset"
+    },
+    "olist_products_dataset": {
+      "queryId": "e1c6b111-4b39-42d9-b26b-92a9449fefae",
+      "queryName": "olist_products_dataset"
+    },
+    "olist_customers_dataset": {
+      "queryId": "224cf195-9893-46a0-93ca-49e81f73f69b",
+      "queryName": "olist_customers_dataset"
+    },
+    "olist_sellers_dataset": {
+      "queryId": "395dc159-0726-4ace-a553-3b46b006db5f",
+      "queryName": "olist_sellers_dataset"
+    },
+    "olist_order_reviews_dataset": {
+      "queryId": "91634e91-40b1-481b-9721-06726579f1a9",
+      "queryName": "olist_order_reviews_dataset"
+    },
+    "product_category_name_translation": {
+      "queryId": "b2d0c72f-1c50-4e96-bb10-ded59c827225",
+      "queryName": "product_category_name_translation"
+    },
+    "olist_products_dataset_DataDestination": {
+      "queryId": "95291757-30ca-4381-9709-ed35df033997",
+      "queryName": "olist_products_dataset_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "olist_customers_dataset_DataDestination": {
+      "queryId": "2e2d1b7c-d366-4c65-8a34-4d111414ee42",
+      "queryName": "olist_customers_dataset_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "olist_sellers_dataset_DataDestination": {
+      "queryId": "7c5250b4-a5c0-4ad3-b110-5e15ebe4c673",
+      "queryName": "olist_sellers_dataset_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "olist_order_reviews_dataset_DataDestination": {
+      "queryId": "50efd7ba-0f2e-4892-a88b-1c64a1d188c2",
+      "queryName": "olist_order_reviews_dataset_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "product_category_name_translation_DataDestination": {
+      "queryId": "1d591d6a-8445-45be-a088-f339c3c49b64",
+      "queryName": "product_category_name_translation_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "olist_orders_dataset_DataDestination": {
+      "queryId": "ad9a49bf-5766-4b04-8e89-b8db8ab7cc45",
+      "queryName": "olist_orders_dataset_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "olist_geolocation_dataset": {
+      "queryId": "529c4e53-cc5b-473f-bd88-7fe65eb6384d",
+      "queryName": "olist_geolocation_dataset"
+    },
+    "olist_order_payments_dataset": {
+      "queryId": "cfdf3118-7144-4cf2-960d-4b681f4b8de1",
+      "queryName": "olist_order_payments_dataset"
+    },
+    "olist_geolocation_dataset_DataDestination": {
+      "queryId": "3736adb7-d5aa-426e-8000-98bb986dcf01",
+      "queryName": "olist_geolocation_dataset_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "olist_order_items_dataset_DataDestination": {
+      "queryId": "085feb36-b003-4b5b-ac2b-7fb2d01cda92",
+      "queryName": "olist_order_items_dataset_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "olist_order_payments_dataset_DataDestination": {
+      "queryId": "39634df7-bbd7-4e99-96b0-94cebe4023fc",
+      "queryName": "olist_order_payments_dataset_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "https://casalalala-my.sharepoint.com/personal/franciscoarjonillatello_casalalala_onmicrosoft_com/Documents/Brazilian%20E-Commerce%20Public%20Dataset/olist_orders_dataset.csv",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"718da411-2991-4af6-9124-ecb48c4fcc9d\",\"DatasourceId\":\"7a319152-8ef0-40ad-918e-b9c5c775b967\"}"
+    },
+    {
+      "path": "https://casalalala-my.sharepoint.com/personal/franciscoarjonillatello_casalalala_onmicrosoft_com/Documents/Brazilian%20E-Commerce%20Public%20Dataset/Mes_a_cargar.txt",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"718da411-2991-4af6-9124-ecb48c4fcc9d\",\"DatasourceId\":\"500b8db7-0fd4-4d27-9504-209bb9eddf19\"}"
+    },
+    {
+      "path": "Warehouse",
+      "kind": "Warehouse",
+      "connectionId": "{\"ClusterId\":\"718da411-2991-4af6-9124-ecb48c4fcc9d\",\"DatasourceId\":\"5db04c25-c390-464c-bcf4-c2dd18e0209e\"}"
+    },
+    {
+      "path": "https://casalalala-my.sharepoint.com/personal/franciscoarjonillatello_casalalala_onmicrosoft_com/Documents/Brazilian%20E-Commerce%20Public%20Dataset/olist_order_items_dataset.csv",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"718da411-2991-4af6-9124-ecb48c4fcc9d\",\"DatasourceId\":\"939cd132-e6df-4122-b485-abc948f9acb0\"}"
+    },
+    {
+      "path": "https://casalalala-my.sharepoint.com/personal/franciscoarjonillatello_casalalala_onmicrosoft_com/Documents/Brazilian%20E-Commerce%20Public%20Dataset/olist_products_dataset.csv",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"718da411-2991-4af6-9124-ecb48c4fcc9d\",\"DatasourceId\":\"30502039-7419-4112-a372-ca2fc0fec0af\"}"
+    },
+    {
+      "path": "https://casalalala-my.sharepoint.com/personal/franciscoarjonillatello_casalalala_onmicrosoft_com/Documents/Brazilian%20E-Commerce%20Public%20Dataset/olist_customers_dataset.csv",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"718da411-2991-4af6-9124-ecb48c4fcc9d\",\"DatasourceId\":\"d7dd4f8b-27c2-42ef-9202-699fe611a408\"}"
+    },
+    {
+      "path": "https://casalalala-my.sharepoint.com/personal/franciscoarjonillatello_casalalala_onmicrosoft_com/Documents/Brazilian%20E-Commerce%20Public%20Dataset/olist_sellers_dataset.csv",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"718da411-2991-4af6-9124-ecb48c4fcc9d\",\"DatasourceId\":\"fb13bca5-ad09-483b-ac70-a4b8a4669cef\"}"
+    },
+    {
+      "path": "https://casalalala-my.sharepoint.com/personal/franciscoarjonillatello_casalalala_onmicrosoft_com/Documents/Brazilian%20E-Commerce%20Public%20Dataset/olist_order_reviews_dataset.csv",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"718da411-2991-4af6-9124-ecb48c4fcc9d\",\"DatasourceId\":\"d5698578-aa27-4aad-aee5-dfce2a1bc536\"}"
+    },
+    {
+      "path": "https://casalalala-my.sharepoint.com/personal/franciscoarjonillatello_casalalala_onmicrosoft_com/Documents/Brazilian%20E-Commerce%20Public%20Dataset/product_category_name_translation.csv",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"718da411-2991-4af6-9124-ecb48c4fcc9d\",\"DatasourceId\":\"0b6a50aa-0e8b-432f-9ec4-dd6e2980a5cf\"}"
+    },
+    {
+      "path": "https://casalalala-my.sharepoint.com/personal/franciscoarjonillatello_casalalala_onmicrosoft_com/Documents/Brazilian%20E-Commerce%20Public%20Dataset/olist_geolocation_dataset.csv",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"718da411-2991-4af6-9124-ecb48c4fcc9d\",\"DatasourceId\":\"b84fa24c-eaca-4532-87b1-b299e2cd8366\"}"
+    },
+    {
+      "path": "https://casalalala-my.sharepoint.com/personal/franciscoarjonillatello_casalalala_onmicrosoft_com/Documents/Brazilian%20E-Commerce%20Public%20Dataset/olist_order_payments_dataset.csv",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"718da411-2991-4af6-9124-ecb48c4fcc9d\",\"DatasourceId\":\"81b2a97a-141e-4d6e-bce9-36ba6794c886\"}"
+    }
+  ],
+  "fastCombine": true
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Warehouse",
+    "displayName": "OlistBrazilian"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "0adb2bd5-576d-8550-4ebc-2b6b798abeba"
+  }
+}

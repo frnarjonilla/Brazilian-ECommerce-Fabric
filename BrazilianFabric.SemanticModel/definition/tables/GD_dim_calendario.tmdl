@@ -1,0 +1,59 @@
+table GD_dim_calendario
+	lineageTag: 9759f508-6bc5-4d8f-9acd-9bb4590c5d29
+	sourceLineageTag: [dbo].[GD_dim_calendario]
+
+	column Fecha
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 15cf16c0-194d-473b-a3a1-65c5dd4e9b98
+		sourceLineageTag: Fecha
+		summarizeBy: none
+		sourceColumn: Fecha
+
+		annotation SummarizationSetBy = Automatic
+
+	column Año
+		dataType: int64
+		formatString: 0
+		lineageTag: 52946c90-f08a-415a-a981-11c23156c66f
+		sourceLineageTag: Año
+		summarizeBy: none
+		sourceColumn: Año
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mes
+		dataType: string
+		lineageTag: 54522e00-1b7f-4a11-b30d-b95cc2fa50d5
+		sourceLineageTag: Mes
+		summarizeBy: none
+		sourceColumn: Mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mes_Numero
+		dataType: int64
+		formatString: 0
+		lineageTag: 3d113998-fcb8-48f5-a5cc-0a8596c6c033
+		sourceLineageTag: Mes_Numero
+		summarizeBy: none
+		sourceColumn: Mes_Numero
+
+		annotation SummarizationSetBy = Automatic
+
+	column Trimestre
+		dataType: string
+		lineageTag: 7840094e-d6e6-4547-afb6-33ebd8cdb399
+		sourceLineageTag: Trimestre
+		summarizeBy: none
+		sourceColumn: Trimestre
+
+		annotation SummarizationSetBy = Automatic
+
+	partition GD_dim_calendario = entity
+		mode: directLake
+		source
+			entityName: GD_dim_calendario
+			schemaName: dbo
+			expressionSource: 'DirectLake - OlistBrazilian'
+

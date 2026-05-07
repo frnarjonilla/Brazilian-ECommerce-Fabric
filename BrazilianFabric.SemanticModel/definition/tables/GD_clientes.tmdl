@@ -1,0 +1,57 @@
+table GD_clientes
+	lineageTag: 5313f9cb-c4a9-4640-a7a4-3cd264543dd3
+	sourceLineageTag: [dbo].[GD_clientes]
+
+	column id_sesion_cliente
+		dataType: string
+		lineageTag: 3fb118a0-a17a-44fe-bdbd-9db0932818a5
+		sourceLineageTag: id_sesion_cliente
+		summarizeBy: none
+		sourceColumn: id_sesion_cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_cliente
+		dataType: string
+		lineageTag: 723b5f22-1e7d-4ee9-b1de-aec3d907d0c4
+		sourceLineageTag: id_cliente
+		summarizeBy: none
+		sourceColumn: id_cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column cp_cliente
+		dataType: int64
+		formatString: 0
+		lineageTag: 16730478-a939-4099-9f5b-a9f300602ccb
+		sourceLineageTag: cp_cliente
+		summarizeBy: none
+		sourceColumn: cp_cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column ciudad_cliente
+		dataType: string
+		lineageTag: 8a236434-c6a0-4081-ae32-e350ae82048a
+		sourceLineageTag: ciudad_cliente
+		summarizeBy: none
+		sourceColumn: ciudad_cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column estado_cliente
+		dataType: string
+		lineageTag: b8618f59-79e4-4019-8156-242b1b1738cf
+		sourceLineageTag: estado_cliente
+		summarizeBy: none
+		sourceColumn: estado_cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	partition GD_clientes = entity
+		mode: directLake
+		source
+			entityName: GD_clientes
+			schemaName: dbo
+			expressionSource: 'DirectLake - OlistBrazilian'
+

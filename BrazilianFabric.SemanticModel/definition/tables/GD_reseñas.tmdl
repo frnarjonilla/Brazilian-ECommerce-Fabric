@@ -1,0 +1,77 @@
+table GD_reseñas
+	lineageTag: 173b90e6-2be3-430a-9411-863117d56a58
+	sourceLineageTag: [dbo].[GD_reseñas]
+
+	column id_reseña
+		dataType: string
+		lineageTag: add57e06-4eec-4530-b5a4-8e9250cd5250
+		sourceLineageTag: id_reseña
+		summarizeBy: none
+		sourceColumn: id_reseña
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_pedido
+		dataType: string
+		lineageTag: 975c84be-fd63-4fd9-a341-2bb99ca33f87
+		sourceLineageTag: id_pedido
+		summarizeBy: none
+		sourceColumn: id_pedido
+
+		annotation SummarizationSetBy = Automatic
+
+	column puntuacion_reseña
+		dataType: int64
+		formatString: 0
+		lineageTag: 038850b0-5c20-4f26-95d0-2ca41a689866
+		sourceLineageTag: puntuacion_reseña
+		summarizeBy: none
+		sourceColumn: puntuacion_reseña
+
+		annotation SummarizationSetBy = Automatic
+
+	column titulo_reseña
+		dataType: string
+		lineageTag: 88bdf0a1-cb68-4339-baab-6aa2c51143c8
+		sourceLineageTag: titulo_reseña
+		summarizeBy: none
+		sourceColumn: titulo_reseña
+
+		annotation SummarizationSetBy = Automatic
+
+	column comentario_reseña
+		dataType: string
+		lineageTag: a7b8bdba-66bd-47e3-8124-426f3a420167
+		sourceLineageTag: comentario_reseña
+		summarizeBy: none
+		sourceColumn: comentario_reseña
+
+		annotation SummarizationSetBy = Automatic
+
+	column fecha_reseña
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f67b4670-7e5a-4021-8e94-bb48e7a88061
+		sourceLineageTag: fecha_reseña
+		summarizeBy: none
+		sourceColumn: fecha_reseña
+
+		annotation SummarizationSetBy = Automatic
+
+	column fecha_respuesta_reseña
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 3dfd4b3e-4cab-4f43-8deb-381f8ec60f01
+		sourceLineageTag: fecha_respuesta_reseña
+		summarizeBy: none
+		sourceColumn: fecha_respuesta_reseña
+
+		annotation SummarizationSetBy = Automatic
+
+	partition GD_reseñas = entity
+		mode: directLake
+		source
+			entityName: GD_reseñas
+			schemaName: dbo
+			expressionSource: 'DirectLake - OlistBrazilian'
+
