@@ -76,9 +76,6 @@
           "to": "frnarjonilla@gmail.com",
           "subject": "Error 1"
         },
-        "externalReferences": {
-          "connection": ""
-        },
         "policy": {
           "timeout": "0.12:00:00",
           "retry": 0,
@@ -102,9 +99,6 @@
           "body": "<p>Error al ejecutar el dataflow bronce</p>",
           "to": "frnarjonilla@gmail.com",
           "subject": "Error 2"
-        },
-        "externalReferences": {
-          "connection": ""
         },
         "policy": {
           "timeout": "0.12:00:00",
@@ -130,9 +124,6 @@
           "to": "frnarjonilla@gmail.com",
           "subject": "Error 3"
         },
-        "externalReferences": {
-          "connection": ""
-        },
         "policy": {
           "timeout": "0.12:00:00",
           "retry": 0,
@@ -157,9 +148,6 @@
           "to": "frnarjonilla@gmail.com",
           "subject": "Éxito pipeline fabric",
           "importance": "High"
-        },
-        "externalReferences": {
-          "connection": ""
         },
         "policy": {
           "timeout": "0.12:00:00",
@@ -210,9 +198,6 @@
           ],
           "waitOnCompletion": true,
           "operationType": "SemanticModelRefresh"
-        },
-        "externalReferences": {
-          "connection": ""
         },
         "policy": {
           "timeout": "0.12:00:00",
